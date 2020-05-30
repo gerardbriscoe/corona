@@ -14,7 +14,7 @@ Vue.component('graph', {
 
 		fixAttributes() {
 			var aTags = document.getElementsByTagName("a");
-			aTags[0].setAttribute('data-src', 'https://www.youtube.com/watch?v=54XLXg4fYsc');
+			aTags[0].setAttribute('data-src', 'https://www.youtube.com/embed/54XLXg4fYsc?start=78&end=107');
 			aTags[0].setAttribute('data-fancybox', '');
 			var divTags = document.getElementsByTagName("div");
 			divTags[4].setAttribute('style', 'position: relative; width: 100%; height: 85%;');
