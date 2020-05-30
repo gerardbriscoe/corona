@@ -4,7 +4,7 @@ This graph aims to show the trend of the Coronavirus (COVID-19) in key cities ar
 
 ## Graph
 
-Modified version of the graph created by [Aatish Bhatia](https://aatishb.com/covidtrends/) in collaboration with [Minute Physics](https://www.youtube.com/user/minutephysics). This graph was chosen as it effectively represents **exponential growth** trends, which is perhaps the most [challenging aspect of pandemics](https://www.youtube.com/watch?v=Kas0tIxDvrg).
+Modified version of the graph created by [Aatish Bhatia](https://aatishb.com/covidtrends/) in collaboration with [Minute Physics](https://www.youtube.com/user/minutephysics). This graph was chosen as it effectively represents **exponential growth** trends, which is perhaps the most [challenging aspect of pandemics](https://www.youtube.com/watch?v=Kas0tIxDvrg). The short explainer video is a clip from the Minute Physics [explainer video] (https://www.youtube.com/watch?v=54XLXg4fYsc).
 
 ## Views
 
