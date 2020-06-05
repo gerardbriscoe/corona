@@ -231,7 +231,7 @@ window.app = new Vue({
 			let url;
 			if (selectedRegion == 'Cities') 
 				{url = 'data/allCities.csv';}
-			else if (selectedRegion == 'Regions' || selectedRegion == 'Canada' || selectedRegion == 'Australia' || selectedRegion == 'China' || selectedRegion == 'London' || selectedRegion == 'Governance')
+			else if (selectedRegion == 'Regions' || selectedRegion == 'Brazil' || selectedRegion == 'Canada' || selectedRegion == 'Australia' || selectedRegion == 'China' || selectedRegion == 'London' || selectedRegion == 'Governance')
 				{url = 'data/' + selectedRegion.toLowerCase() + '.csv';}
 			else if (selectedRegion == 'United Kingdom')
 				{url = 'data/uk.csv';}
@@ -281,7 +281,7 @@ window.app = new Vue({
 						{grouped = grouped.concat(country);}
 				}
 			}
-			else if (selectedRegion == 'Cities' || selectedRegion == 'Regions' || selectedRegion == 'Canada' || selectedRegion == 'Australia' || selectedRegion == 'China' || selectedRegion == 'United Kingdom' || selectedRegion == 'London' || selectedRegion == 'United States' || selectedRegion == 'Locations' || selectedRegion == 'Governance')
+			else if (selectedRegion == 'Cities' || selectedRegion == 'Regions' || selectedRegion == 'Brazil'  || selectedRegion == 'Canada' || selectedRegion == 'Australia' || selectedRegion == 'China' || selectedRegion == 'United Kingdom' || selectedRegion == 'London' || selectedRegion == 'United States' || selectedRegion == 'Locations' || selectedRegion == 'Governance')
 				{grouped = this.groupByCountry(data, dates, regionsToPullToCountryLevel);} 
 			else {grouped = this.filterByCountry(data, dates, selectedRegion).filter(e => !regionsToPullToCountryLevel.includes(e.region));} // also filter our Hong Kong and Macau as subregions of Mainland China
 
@@ -331,6 +331,7 @@ window.app = new Vue({
 			const topCountries = this.covidData.sort((a, b) => b.maxCases - a.maxCases).slice(0, 12).map(e => e.country);
 			const notableCountries = []
 			const notableUS = ['New York City', 'New York', 'Chicago', 'Illinois', 'Los Angeles', 'California']
+			const notableBrazil = ['Sao Paulo, Sao Paulo (State), Rio de Janeiro, Rio de Janeiro (State)']
 			const notableChina = ['Beijing', 'Shanghai', 'Hong Kong']
 			const notableLondon = ['Camden', 'Richmond', 'Westminster']
 
@@ -342,8 +343,8 @@ window.app = new Vue({
 				{this.selectedCountries = ['United Kingdom', 'United States', 'Brazil', 'South Africa', 'Qatar', 'Australia', 'Japan', 'European Union', 'World'];}
 			else if (this.selectedRegion == 'Regions' || this.selectedRegion == 'Canada' || this.selectedRegion == 'Australia' || this.selectedRegion == 'United Kingdom' || this.selectedRegion == 'Governance')
 				{this.selectedCountries = this.countries;}
-			else if (this.selectedRegion == 'United States' || this.selectedRegion == 'London' || this.selectedRegion == 'China')
-				{this.selectedCountries = this.countries.filter(e => topCountries.includes(e) || notableUS.includes(e) || notableChina.includes(e) || notableLondon.includes(e));}
+			else if (this.selectedRegion == 'United States' || this.selectedRegion == 'Brazil' || this.selectedRegion == 'London' || this.selectedRegion == 'China')
+				{this.selectedCountries = this.countries.filter(e => topCountries.includes(e) || notableUS.includes(e) || notableChina.includes(e) || notableBrazil.includes(e) || notableLondon.includes(e));}
 			else{
 				if ((this.selectedCountries.length === 0 || !this.firstLoad) && updateSelectedCountries) {
 					this.selectedCountries = this.countries.filter(e => topCountries.includes(e) || notableCountries.includes(e));
@@ -587,7 +588,7 @@ window.app = new Vue({
 		paused: true,
 		dataTypes: ['Confirmed Cases', 'Reported Deaths'],
 		selectedData: 'Confirmed Cases',
-		regions: ['Cities', 'Countries', 'Regions', 'China', 'United States', 'United Kingdom', 'Canada', 'Australia', 'London', 'Locations', 'Governance'],
+		regions: ['Cities', 'Countries', 'Regions', 'China', 'United States', 'United Kingdom', 'Brazil', 'Canada', 'Australia', 'London', 'Locations', 'Governance'],
 		selectedRegion: 'Cities',
 		sliderSelected: false,
 		day: 7,
