@@ -233,6 +233,8 @@ window.app = new Vue({
 				{url = 'data/allCities.csv';}
 			else if (selectedRegion == 'Regions' || selectedRegion == 'Brazil' || selectedRegion == 'Canada' || selectedRegion == 'Australia' || selectedRegion == 'China' || selectedRegion == 'London' || selectedRegion == 'Governance')
 				{url = 'data/' + selectedRegion.toLowerCase() + '.csv';}
+			else if (selectedRegion == 'North America')
+				{url = 'data/' + selectedRegion.toLowerCase().replace(" ","").replace("america","America") + '.csv';}
 			else if (selectedRegion == 'United Kingdom')
 				{url = 'data/uk.csv';}
 			else if (selectedRegion == 'United States')
@@ -281,7 +283,7 @@ window.app = new Vue({
 						{grouped = grouped.concat(country);}
 				}
 			}
-			else if (selectedRegion == 'Cities' || selectedRegion == 'Regions' || selectedRegion == 'Brazil'  || selectedRegion == 'Canada' || selectedRegion == 'Australia' || selectedRegion == 'China' || selectedRegion == 'United Kingdom' || selectedRegion == 'London' || selectedRegion == 'United States' || selectedRegion == 'Locations' || selectedRegion == 'Governance')
+			else if (selectedRegion == 'Cities' || selectedRegion == 'Regions' || selectedRegion == 'Brazil'  || selectedRegion == 'Canada' || selectedRegion == 'Australia' || selectedRegion == 'China' || selectedRegion == 'United Kingdom' || selectedRegion == 'London' || selectedRegion == 'United States' || selectedRegion == 'Locations' || selectedRegion == 'Governance' || selectedRegion == 'North America')
 				{grouped = this.groupByCountry(data, dates, regionsToPullToCountryLevel);} 
 			else {grouped = this.filterByCountry(data, dates, selectedRegion).filter(e => !regionsToPullToCountryLevel.includes(e.region));} // also filter our Hong Kong and Macau as subregions of Mainland China
 
@@ -343,7 +345,7 @@ window.app = new Vue({
 				{this.selectedCountries = ['United Kingdom', 'United States', 'Brazil', 'South Africa', 'Qatar', 'Australia', 'Japan', 'European Union', 'World'];}
 			else if (this.selectedRegion == 'Regions' || this.selectedRegion == 'Canada' || this.selectedRegion == 'Australia' || this.selectedRegion == 'United Kingdom' || this.selectedRegion == 'Governance')
 				{this.selectedCountries = this.countries;}
-			else if (this.selectedRegion == 'United States' || this.selectedRegion == 'Brazil' || this.selectedRegion == 'London' || this.selectedRegion == 'China')
+			else if (this.selectedRegion == 'United States' || this.selectedRegion == 'Brazil' || this.selectedRegion == 'London' || this.selectedRegion == 'China' || this.selectedRegion == 'North America')
 				{this.selectedCountries = this.countries.filter(e => topCountries.includes(e) || notableUS.includes(e) || notableChina.includes(e) || notableBrazil.includes(e) || notableLondon.includes(e));}
 			else{
 				if ((this.selectedCountries.length === 0 || !this.firstLoad) && updateSelectedCountries) {
@@ -588,7 +590,7 @@ window.app = new Vue({
 		paused: true,
 		dataTypes: ['Confirmed Cases', 'Reported Deaths'],
 		selectedData: 'Confirmed Cases',
-		regions: ['Cities', 'Countries', 'Regions', 'China', 'United States', 'United Kingdom', 'Brazil', 'Canada', 'Australia', 'London', 'Locations', 'Governance'],
+		regions: ['Cities', 'Countries', 'Regions', 'North America', 'China', 'United States', 'United Kingdom', 'Brazil', 'Canada', 'Australia', 'London', 'Locations', 'Governance'],
 		selectedRegion: 'Cities',
 		sliderSelected: false,
 		day: 7,
