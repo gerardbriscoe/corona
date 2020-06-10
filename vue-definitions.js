@@ -333,7 +333,7 @@ window.app = new Vue({
 			const topCountries = this.covidData.sort((a, b) => b.maxCases - a.maxCases).slice(0, 12).map(e => e.country);
 			const notableCountries = []
 			const notableUS = ['New York City', 'New York', 'Chicago', 'Illinois', 'Los Angeles', 'California']
-			const notableBrazil = ['Sao Paulo, Sao Paulo (State), Rio de Janeiro, Rio de Janeiro (State)']
+			const notableBrazil = ['Sao Paulo', 'Rio de Janeiro', 'Sao Paulo (State)', 'Rio de Janeiro (State)']
 			const notableChina = ['Beijing', 'Shanghai', 'Hong Kong']
 			const notableLondon = ['Camden', 'Richmond', 'Westminster']
 
