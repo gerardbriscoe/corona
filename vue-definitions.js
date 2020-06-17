@@ -228,20 +228,7 @@ window.app = new Vue({
 		},
 
 		pullData(selectedData, selectedRegion, updateSelectedCountries = true) {
-			let url;
-			if (selectedRegion == 'Cities') 
-				{url = 'data/allCities.csv';}
-			else if (selectedRegion == 'Regions' || selectedRegion == 'Brazil' || selectedRegion == 'Canada' || selectedRegion == 'Australia' || selectedRegion == 'China' || selectedRegion == 'London' || selectedRegion == 'Governance')
-				{url = 'data/' + selectedRegion.toLowerCase() + '.csv';}
-			else if (selectedRegion == 'North America' || selectedRegion == 'South America')
-				{url = 'data/' + selectedRegion.toLowerCase().replace(" ","").replace("america","America") + '.csv';}
-			else if (selectedRegion == 'United Kingdom')
-				{url = 'data/uk.csv';}
-			else if (selectedRegion == 'United States')
-				{url = 'data/us.csv';}
-			else if (selectedRegion == 'Locations')
-				{url = 'data/zall.csv';}
-			else {url = 'data/countries.csv';}
+			let url = 'data/' + selectedRegion.toLowerCase().replace(" ","").replace("america","America").replace("east","East") + '.csv';
 			Plotly.d3.csv(url, (data) => this.processData(data, selectedRegion, updateSelectedCountries));
 		},
 
@@ -283,15 +270,13 @@ window.app = new Vue({
 						{grouped = grouped.concat(country);}
 				}
 			}
-			else if (selectedRegion == 'Cities' || selectedRegion == 'Regions' || selectedRegion == 'Brazil'  || selectedRegion == 'Canada' || selectedRegion == 'Australia' || selectedRegion == 'China' || selectedRegion == 'United Kingdom' || selectedRegion == 'London' || selectedRegion == 'United States' || selectedRegion == 'Locations' || selectedRegion == 'Governance' || selectedRegion == 'North America' || selectedRegion == 'South America')
-				{grouped = this.groupByCountry(data, dates, regionsToPullToCountryLevel);} 
-			else {grouped = this.filterByCountry(data, dates, selectedRegion).filter(e => !regionsToPullToCountryLevel.includes(e.region));} // also filter our Hong Kong and Macau as subregions of Mainland China
-
+			else{grouped = this.groupByCountry(data, dates, regionsToPullToCountryLevel);} 
+	
 			let exclusions = ['Cruise Ship', 'Diamond Princess'];
 			let renames = {
 				'Taiwan*': 'Taiwan',
-				'US': 'United States',
-				'Korea, South': 'South Korea',
+				'US': 'USA',
+				'Korea; South': 'South Korea',
 				'Sao Tome and Principe': 'Sao Tome & Principe',
 				'Bosnia and Herzegovina': 'Bosnia',
 				'Central African Republic': 'CAR',
@@ -331,33 +316,20 @@ window.app = new Vue({
 			this.countries = this.covidData.map(e => e.country).sort();
 			this.visibleCountries = this.countries;
 			const topCountries = this.covidData.sort((a, b) => b.maxCases - a.maxCases).slice(0, 12).map(e => e.country);
-			const notableCountries = []
-			const notableUS = ['New York City', 'New York', 'Chicago', 'Illinois', 'Los Angeles', 'California']
-			const notableBrazil = ['Sao Paulo', 'Rio de Janeiro', 'Sao Paulo (State)', 'Rio de Janeiro (State)']
-			const notableChina = ['Beijing', 'Shanghai', 'Hong Kong']
-			const notableLondon = ['Camden', 'Richmond', 'Westminster']
+			const notableLocations = ['New York City', 'New York', 'Chicago', 'Illinois', 'Los Angeles', 'California', 'Sao Paulo', 'Rio de Janeiro', 'Sao Paulo (State)', 'Rio de Janeiro (State)', 'Beijing', 'Shanghai', 'Hong Kong','Camden', 'Richmond', 'Westminster']
 
 			if (this.selectedRegion == 'Cities')
 				{this.selectedCountries = ['London', 'New York City', 'Tokyo', 'Sao Paulo', 'Johannesburg', 'Doha', 'Sydney'];}
+			else if (this.selectedRegion == 'Countries')
+				{this.selectedCountries = ['United Kingdom', 'USA', 'Brazil', 'South Africa', 'Qatar', 'Australia', 'Japan', 'European Union', 'World'];}
 			else if (this.selectedRegion == 'Locations')
 				{this.selectedCountries = ['Barnet', 'London', 'England', 'United Kingdom', 'European Union', 'Europe', 'World'];}
-			else if (this.selectedRegion == 'Countries')
-				{this.selectedCountries = ['United Kingdom', 'United States', 'Brazil', 'South Africa', 'Qatar', 'Australia', 'Japan', 'European Union', 'World'];}
-			else if (this.selectedRegion == 'Regions' || this.selectedRegion == 'Canada' || this.selectedRegion == 'Australia' || this.selectedRegion == 'United Kingdom' || this.selectedRegion == 'Governance')
+			else if (this.selectedRegion == 'Regions' || this.selectedRegion == 'Canada' || this.selectedRegion == 'Australia' || this.selectedRegion == 'UK' || this.selectedRegion == 'Governance')
 				{this.selectedCountries = this.countries;}
-			else if (this.selectedRegion == 'United States' || this.selectedRegion == 'Brazil' || this.selectedRegion == 'London' || this.selectedRegion == 'China' || this.selectedRegion == 'North America' || this.selectedRegion == 'South America')
-				{this.selectedCountries = this.countries.filter(e => topCountries.includes(e) || notableUS.includes(e) || notableChina.includes(e) || notableBrazil.includes(e) || notableLondon.includes(e));}
-			else{
-				if ((this.selectedCountries.length === 0 || !this.firstLoad) && updateSelectedCountries) {
-					this.selectedCountries = this.countries.filter(e => topCountries.includes(e) || notableCountries.includes(e));
-					this.defaultCountries = this.selectedCountries; // Used for createURL default check
-					if (this.mySelect == 'all')
-						{this.selectedCountries = this.countries;} 
-					else if (this.mySelect == 'none')
-						{this.selectedCountries = [];}
-					this.mySelect = '';
+			else
+				{
+				this.selectedCountries = this.countries.filter(e => topCountries.includes(e) || notableLocations.includes(e));
 				}
-			}
 			this.firstLoad = false;
 			this.play();
 		},
@@ -590,7 +562,7 @@ window.app = new Vue({
 		paused: true,
 		dataTypes: ['Confirmed Cases', 'Reported Deaths'],
 		selectedData: 'Confirmed Cases',
-		regions: ['Cities', 'Countries', 'Regions', 'North America', 'South America', 'China', 'United States', 'United Kingdom', 'Brazil', 'Canada', 'Australia', 'London', 'Locations', 'Governance'],
+		regions: ['Cities', 'Countries', 'Regions', 'North America', 'South America', 'Europe', 'Middle East' , 'Africa', 'Asia', 'Oceania','China', 'USA', 'UK', 'Brazil', 'Canada', 'Russia', 'Australia', 'London', 'Governance', 'Locations'],
 		selectedRegion: 'Cities',
 		sliderSelected: false,
 		day: 7,
