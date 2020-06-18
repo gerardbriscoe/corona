@@ -316,12 +316,12 @@ window.app = new Vue({
 			this.countries = this.covidData.map(e => e.country).sort();
 			this.visibleCountries = this.countries;
 			const topCountries = this.covidData.sort((a, b) => b.maxCases - a.maxCases).slice(0, 12).map(e => e.country);
-			const notableLocations = ['New York City', 'New York', 'Chicago', 'Illinois', 'Los Angeles', 'California', 'Sao Paulo', 'Rio de Janeiro', 'Sao Paulo (State)', 'Rio de Janeiro (State)', 'Beijing', 'Shanghai', 'Hong Kong','Camden', 'Richmond', 'Westminster']
+			const notableLocations = ['New York City', 'New York', 'Chicago', 'Illinois', 'Los Angeles', 'California', 'Sao Paulo', 'Rio de Janeiro', 'Sao Paulo (State)', 'Rio de Janeiro (State)', 'Beijing', 'Shanghai', 'Hong Kong','Camden', 'Richmond', 'Westminster', 'Moscow', 'Arizona', 'Oklahoma', 'Florida', 'Texas']
 
 			if (this.selectedRegion == 'Cities')
 				{this.selectedCountries = ['London', 'New York City', 'Tokyo', 'Sao Paulo', 'Johannesburg', 'Doha', 'Sydney'];}
 			else if (this.selectedRegion == 'Countries')
-				{this.selectedCountries = ['United Kingdom', 'USA', 'Brazil', 'South Africa', 'Qatar', 'Australia', 'Japan', 'European Union', 'World'];}
+				{this.selectedCountries = ['United Kingdom', 'USA', 'Brazil', 'South Africa', 'Qatar', 'Australia', 'Japan', 'European Union', 'World', 'Russia'];}
 			else if (this.selectedRegion == 'Locations')
 				{this.selectedCountries = ['Barnet', 'London', 'England', 'United Kingdom', 'European Union', 'Europe', 'World'];}
 			else if (this.selectedRegion == 'Regions' || this.selectedRegion == 'Canada' || this.selectedRegion == 'Australia' || this.selectedRegion == 'UK' || this.selectedRegion == 'Governance')
