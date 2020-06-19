@@ -289,7 +289,10 @@ window.app = new Vue({
 				'Kingston upon Thames': 'Kingston',
 				'Hammersmith and Fulham': 'Hammersmith',
 				'Kensington and Chelsea': 'Kensington',
-				'Barking and Dagenham': 'Barking'
+				'Barking and Dagenham': 'Barking',
+				'Dadra and Nagar Haveli': 'Dadra & Nagar Haveli',
+				'Trinidad and Tobago': 'Trinidad & Tobago',
+				'Jammu and Kashmir': 'Jammu & Kashmir'
 			};
 
 			let covidData = [];
@@ -323,7 +326,7 @@ window.app = new Vue({
 			else if (this.selectedRegion == 'Countries')
 				{this.selectedCountries = ['United Kingdom', 'USA', 'Brazil', 'South Africa', 'Qatar', 'Australia', 'Japan', 'European Union', 'World', 'Russia'];}
 			else if (this.selectedRegion == 'Locations')
-				{this.selectedCountries = ['Barnet', 'London', 'England', 'United Kingdom', 'European Union', 'Europe', 'World'];}
+				{this.selectedCountries = ['Barnet', 'London', 'England', 'United Kingdom', 'Western Europe', 'European Union', 'Europe', 'World'];}
 			else if (this.selectedRegion == 'Regions' || this.selectedRegion == 'Canada' || this.selectedRegion == 'Australia' || this.selectedRegion == 'UK' || this.selectedRegion == 'Governance')
 				{this.selectedCountries = this.countries;}
 			else
