@@ -322,7 +322,7 @@ window.app = new Vue({
 			const notableLocations = ['New York City', 'New York', 'Chicago', 'Illinois', 'Los Angeles', 'California', 'Sao Paulo', 'Rio de Janeiro', 'Sao Paulo (State)', 'Rio de Janeiro (State)', 'Beijing', 'Shanghai', 'Hong Kong','Camden', 'Richmond', 'Westminster', 'Moscow', 'Arizona', 'Oklahoma', 'Florida', 'Texas', 'Mumbai', 'Delhi', 'Maharashtra', 'Blue(States)', 'Red(States)', 'Purple(States)', 'Utah', 'Arkansas', 'Oregon'	]
 
 			if (this.selectedRegion == 'Cities')
-				{this.selectedCountries = ['London', 'New York City', 'Tokyo', 'Sao Paulo', 'Johannesburg', 'Doha', 'Sydney'];}
+				{this.selectedCountries = ['London', 'New York City', 'Beijing', 'Tokyo', 'Sao Paulo', 'Johannesburg', 'Doha', 'Sydney'];}
 			else if (this.selectedRegion == 'Countries')
 				{this.selectedCountries = ['United Kingdom', 'USA', 'Brazil', 'South Africa', 'Qatar', 'Australia', 'Japan', 'European Union', 'World', 'Russia'];}
 			else if (this.selectedRegion == 'Locations')
