@@ -565,7 +565,7 @@ window.app = new Vue({
 		paused: true,
 		dataTypes: ['Confirmed Cases','Reported Deaths'],
 		selectedData: 'Confirmed Cases',
-		regions: ['Cities','Countries','Regions','North America','South America','Europe','Middle East','Africa','Asia','Oceania','USA','Brazil','Russia','India','UK','Chile','Mexico','China','Canada','Australia','Wales','London','Governance','Locations'],
+		regions: ['Cities','Countries','Regions','North America','South America','Europe','Middle East','Africa','Asia','Oceania','USA','Brazil','Russia','India','UK','Chile','Peru','Mexico','China','Canada','Australia','Wales','London','Governance','Locations'],
 		selectedRegion: 'Cities',
 		sliderSelected: false,
 		day: 7,
