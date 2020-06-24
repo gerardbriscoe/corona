@@ -324,7 +324,7 @@ window.app = new Vue({
 			if (this.selectedRegion == 'Cities')
 				{this.selectedCountries = ['London', 'New York City', 'Beijing', 'Tokyo', 'Sao Paulo', 'Johannesburg', 'Doha', 'Sydney'];}
 			else if (this.selectedRegion == 'Countries')
-				{this.selectedCountries = ['United Kingdom', 'USA', 'Brazil', 'South Africa', 'Qatar', 'Australia', 'Japan', 'European Union', 'World', 'Russia'];}
+				{this.selectedCountries = ['United Kingdom', 'USA', 'Brazil', 'South Africa', 'Qatar', 'Australia', 'Japan', 'European Union', 'World', 'Russia','India'];}
 			else if (this.selectedRegion == 'Locations')
 				{this.selectedCountries = ['Barnet', 'London', 'England', 'United Kingdom', 'Western Europe', 'European Union', 'Europe', 'World'];}
 			else if (this.selectedRegion == 'Regions' || this.selectedRegion == 'Canada' || this.selectedRegion == 'Australia' || this.selectedRegion == 'UK' || this.selectedRegion == 'Governance' || this.selectedRegion == 'Chile' || this.selectedRegion == 'Scotland')
@@ -562,7 +562,13 @@ window.app = new Vue({
 		paused: true,
 		dataTypes: ['Confirmed Cases','Reported Deaths'],
 		selectedData: 'Confirmed Cases',
-		regions: ['Cities','Countries','Regions','North America','South America','Europe','Middle East','Africa','Asia','Oceania','USA','Brazil','Russia','India','UK','Chile','Peru','Mexico','China','Canada','Australia','Scotland','Wales','London','Governance','Locations'],
+		regions: ['Cities','Countries','Regions','-------------',
+		'North America','South America','Europe','Middle East','Africa','Asia','Oceania','-------------',
+		'USA','Brazil','Russia','India','UK','Chile','Peru','Mexico','China','Canada','Australia','Scotland','Wales','-------------',
+		'London','-------------'
+		,'Governance'
+		,'-------------',
+		'Locations'],
 		selectedRegion: 'Cities',
 		sliderSelected: false,
 		day: 7,
