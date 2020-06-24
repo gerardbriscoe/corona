@@ -285,11 +285,6 @@ window.app = new Vue({
 				'West Bank and Gaza': 'Palestine',
 				'Burma': 'Myanmar',
 				'Northern Mariana Islands': 'Mariana Islands',
-				'Richmond upon Thames': 'Richmond',
-				'Kingston upon Thames': 'Kingston',
-				'Hammersmith and Fulham': 'Hammersmith',
-				'Kensington and Chelsea': 'Kensington',
-				'Barking and Dagenham': 'Barking',
 				'Dadra and Nagar Haveli': 'Dadra & Nagar Haveli',
 				'Trinidad and Tobago': 'Trinidad & Tobago',
 				'Jammu and Kashmir': 'Jammu & Kashmir'
@@ -564,7 +559,7 @@ window.app = new Vue({
 		selectedData: 'Confirmed Cases',
 		regions: ['Cities','Countries','Regions','-------------',
 		'North America','South America','Europe','Middle East','Africa','Asia','Oceania','-------------',
-		'USA','Brazil','Russia','India','UK','Chile','Peru','Mexico','China','Canada','Australia','Scotland','Wales','-------------',
+		'USA','Brazil','Russia','India','UK','Chile','Peru','Mexico','China','Canada','Australia','England','Scotland','Wales','-------------',
 		'London','-------------'
 		,'Governance'
 		,'-------------',
