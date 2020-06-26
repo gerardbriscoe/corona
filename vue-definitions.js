@@ -319,7 +319,7 @@ window.app = new Vue({
 			if (this.selectedRegion == 'Cities')
 				{this.selectedCountries = ['London','New York City','Beijing','Tokyo','Sao Paulo','Johannesburg','Doha','Sydney'];}
 			else if (this.selectedRegion == 'Countries')
-				{this.selectedCountries = ['United Kingdom','USA','Brazil','South Africa','Qatar','Australia','Japan','European Union','World','Russia','India'];}
+				{this.selectedCountries = ['United Kingdom','USA','Brazil','South Africa','Qatar','Australia','Japan','European Union','World','Russia','India','Latin America'];}
 			else if (this.selectedRegion == 'Locations')
 				{this.selectedCountries = ['Barnet','London','England','United Kingdom','Western Europe','European Union','Europe','World'];}
 			else if (selectAll.indexOf(this.selectedRegion) > -1)
