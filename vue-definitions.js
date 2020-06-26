@@ -559,7 +559,7 @@ window.app = new Vue({
 		selectedData: 'Confirmed Cases',
 		regions: ['Cities','Countries','Regions','-------------',
 		'North America','South America','Europe','Middle East','Africa','Asia','Oceania','-------------',
-		'USA','Brazil','Russia','India','UK','Chile','Peru','Mexico','China','Italy','Germany','Canada','Australia','England','Scotland','Wales','-------------',
+		'USA','Brazil','Russia','India','UK','Chile','Peru','Mexico','China','Italy','Germany','Austria','Canada','Australia','England','Scotland','Wales','-------------',
 		'London','Lima','-------------'
 		,'Governance'
 		,'-------------',
