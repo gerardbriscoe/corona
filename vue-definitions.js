@@ -315,7 +315,7 @@ window.app = new Vue({
 			this.visibleCountries = this.countries;
 			const topCountries = this.covidData.sort((a, b) => b.maxCases - a.maxCases).slice(0, 12).map(e => e.country);
 			const notableLocations = ['New York City','New York','Chicago','Illinois','Los Angeles','California','Sao Paulo','Rio de Janeiro','Sao Paulo (State)','Rio de Janeiro (State)','Beijing','Shanghai','Hong Kong','Camden','Richmond','Westminster','Moscow','Arizona','Oklahoma','Florida','Texas','Mumbai','Delhi','Maharashtra','Blue(States)','Red(States)','Purple(States)','Utah','Arkansas','Oregon','Anglesey']
-			const selectAll = ['Regions','Canada','Australia','UK','Governance','Chile','Scotland','Germany','South Africa'];
+			const selectAll = ['Regions','Canada','Australia','UK','Governance','Chile','Scotland','Germany','South Africa','Belgium','Netherlands'];
 			if (this.selectedRegion == 'Cities')
 				{this.selectedCountries = ['London','New York City','Beijing','Tokyo','Sao Paulo','Johannesburg','Doha','Sydney'];}
 			else if (this.selectedRegion == 'Countries')
