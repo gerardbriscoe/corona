@@ -1,6 +1,7 @@
 Province/State,Country/Region,Lat,Long
 ,Latvia,56.8796,24.6032
 ,European Union
+,Europe
 ,Pargaujas,57.3735,25.115000000000002
 ,Priekulu,57.3395,25.445500000000003
 ,Gulbenes,57.173500000000004,26.5835
@@ -118,3 +119,4 @@ Province/State,Country/Region,Lat,Long
 ,Valmiera,57.522999999999996,25.427
 ,Mersraga,57.314,23.03
 ,Plavinu,56.6985,25.722
+,World
