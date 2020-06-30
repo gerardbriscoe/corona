@@ -228,7 +228,7 @@ window.app = new Vue({
 		},
 
 		pullData(selectedData, selectedRegion, updateSelectedCountries = true) {
-			let url = 'data/' + selectedRegion.toLowerCase().replace(" ","").replace("america","America").replace("east","East") + '.csv';
+			let url = 'data/' + selectedRegion.toLowerCase().replace(" ","").replace("america","America").replace("east","East").replace("southa","southA").replace("southk","southK") + '.csv';
 			Plotly.d3.csv(url, (data) => this.processData(data, selectedRegion, updateSelectedCountries));
 		},
 
@@ -317,7 +317,7 @@ window.app = new Vue({
 			this.visibleCountries = this.countries;
 			const topCountries = this.covidData.sort((a, b) => b.maxCases - a.maxCases).slice(0, 12).map(e => e.country);
 			const notableLocations = ['New York City','New York','Chicago','Illinois','Los Angeles','California','Sao Paulo','Rio de Janeiro','Sao Paulo (State)','Rio de Janeiro (State)','Beijing','Shanghai','Hong Kong','Camden','Richmond','Westminster','Moscow','Arizona','Oklahoma','Florida','Texas','Mumbai','Delhi','Maharashtra','Blue(States)','Red(States)','Purple(States)','Utah','Arkansas','Oregon','Anglesey']
-			const selectAll = ['Regions','Canada','Australia','UK','Governance','Chile','Scotland','Germany','South Africa','Belgium','Netherlands','Poland','Slovenia','Austria'];
+			const selectAll = ['Regions','Canada','Australia','UK','Governance','Chile','Scotland','Germany','South Africa','Belgium','Netherlands','Poland','Slovenia','Austria','London','Czechia'];
 			if (this.selectedRegion == 'Cities')
 				{this.selectedCountries = ['London','New York City','Beijing','Tokyo','Sao Paulo','Johannesburg','Doha','Sydney'];}
 			else if (this.selectedRegion == 'Countries')
@@ -559,12 +559,19 @@ window.app = new Vue({
 		paused: true,
 		dataTypes: ['Confirmed Cases','Reported Deaths'],
 		selectedData: 'Confirmed Cases',
-		regions: ['Cities','Countries','Regions','-------------',
-		'North America','South America','Europe','Middle East','Africa','Asia','Oceania','-------------',
-		'USA','Brazil','Russia','India','UK','South Korea','South Africa','Chile','Peru','Mexico','Panama','China','Italy','Germany','Spain','Sweden','Belgium','Netherlands','Austria','Ireland','Switzerland','Japan','Canada','Australia','Lithuania','Estonia','Czechia','Poland','Latvia','Slovenia','England','Scotland','Wales','-------------',
-		'London','Lima','-------------'
-		,'Governance'
-		,'-------------',
+		regions: [
+		'Cities','Countries','Regions',
+		'-------------',
+		'North America','South America','Latin America','Europe','EU','Middle East','Africa','Asia','Oceania',
+		'-------------',
+		'USA','Brazil','Russia','India','UK','Spain','Peru','Chile','Italy','Germany','South Africa','Canada','China','Sweden','Belgium','Netherlands','Switzerland','Ireland','Japan','Austria','Czechia','Australia','Estonia','Slovenia',
+		'-------------',
+		'England','Scotland','Wales',
+		'-------------',
+		'London','Lima',
+		'-------------',
+		'Governance',
+		'-------------',
 		'Locations'],
 		selectedRegion: 'Cities',
 		sliderSelected: false,
