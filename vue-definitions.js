@@ -228,7 +228,7 @@ window.app = new Vue({
 		},
 
 		pullData(selectedData, selectedRegion, updateSelectedCountries = true) {
-			let url = 'data/' + selectedRegion.toLowerCase().replace(" ","").replace("america","America").replace("east","East").replace("southa","southA").replace("southk","southK") + '.csv';
+				let url = 'data/' + selectedRegion.toLowerCase().replace(/ \([0-9,]*\)/g,"").replace(" ","").replace("america","America").replace("east","East").replace("southa","southA").replace("southk","southK") + '.csv';
 			Plotly.d3.csv(url, (data) => this.processData(data, selectedRegion, updateSelectedCountries));
 		},
 
@@ -289,6 +289,7 @@ window.app = new Vue({
 				'Trinidad and Tobago': 'Trinidad & Tobago',
 				'Antigua and Barbuda': 'Antigua & Barbuda',
 				'Jammu and Kashmir': 'Jammu & Kashmir',
+				'Andaman and Nicobar': 'Andaman & Nicobar',
 				'District of Columbia': 'D. of Columbia'
 			};
 
@@ -315,14 +316,13 @@ window.app = new Vue({
 			this.covidData = covidData.filter(e => e.maxCases > this.minCasesInCountry);
 			this.countries = this.covidData.map(e => e.country).sort();
 			this.visibleCountries = this.countries;
-			const topCountries = this.covidData.sort((a, b) => b.maxCases - a.maxCases).slice(0, 12).map(e => e.country);
-			const notableLocations = ['New York City','New York','Chicago','Illinois','Los Angeles','California','Sao Paulo','Rio de Janeiro','Sao Paulo (State)','Rio de Janeiro (State)','Beijing','Shanghai','Hong Kong','Camden','Richmond','Westminster','Moscow','Arizona','Oklahoma','Florida','Texas','Mumbai','Delhi','Maharashtra','Blue(States)','Red(States)','Purple(States)','Utah','Arkansas','Oregon','Anglesey']
-			const selectAll = ['Regions','Canada','Australia','UK','Governance','Chile','Scotland','Germany','South Africa','Belgium','Netherlands','Poland','Slovenia','Austria','London','Czechia'];
-			if (this.selectedRegion == 'Cities')
-				{this.selectedCountries = ['London','New York City','Beijing','Tokyo','Sao Paulo','Johannesburg','Doha','Sydney'];}
-			else if (this.selectedRegion == 'Countries')
-				{this.selectedCountries = ['United Kingdom','USA','Brazil','South Africa','Qatar','Australia','Japan','European Union','World','Russia','India','Latin America'];}
-			else if (this.selectedRegion == 'Locations')
+			const topCountries = this.covidData.sort((a, b) => b.maxCases - a.maxCases).slice(0,35).map(e => e.country);
+			const notableLocations = [
+			'Sao Paulo','New York','London','Tokyo','Dubai','Johannesburg','Sydney','Buenos Aires','Los Angeles','Paris','Shanghai','Istanbul','Lagos','Auckland','Bogota','Chicago','Berlin','Singapore','Riyadh','Casablanca','Santiago','Toronto','Milan','Hong Kong','Tel Aviv','Tunis','Melbourne','Caracas','Mexico City','Madrid','Mumbai','Cairo','Kampala','Wellington',
+			'Brazil','USA','United Kingdom','Japan','United Arab Emirates','SouthAfrica','Australia','Argentina','France','China','Turkey','Nigeria','New Zealand','Colombia','Mexico','Germany','Singapore','Saudi Arabia','Morocco','Chile','Canada','Italy','Israel','Tunisia','Taiwan','Venezuela', 'Spain','India','Egypt','Uganda'
+			]
+			const selectAll = ['Europe','Brazil','Lima']
+			if (this.selectedRegion == 'Locations')
 				{this.selectedCountries = ['Barnet','London','England','United Kingdom','Western Europe','European Union','Europe','World'];}
 			else if (selectAll.indexOf(this.selectedRegion) > -1)
 				{this.selectedCountries = this.countries;}
@@ -564,8 +564,8 @@ window.app = new Vue({
 		'-------------',
 		'North America','South America','Latin America','Europe','EU','Middle East','Africa','Asia','Oceania',
 		'-------------',
-		'USA','Brazil','Russia','India','UK','Spain','Peru','Chile','Italy','Germany','South Africa','Canada','China','Sweden','Belgium','Netherlands','Switzerland','Ireland','Japan','Austria','Czechia','Australia','Estonia','Slovenia',
-		'-------------',
+		'USA (2,727,853)','Brazil (1,408,485)','Russia (647,849)','India (585,792)','UK (312,654)','Spain (296,351)','Peru (285,213)','Chile (279,393)','Italy (240,578)','Germany (195,832)','Austria (151,209)','South Africa (104,204)','Canada (83,534)','China (68,451)','Sweden (61,427)','Belgium (50,273)','Netherlands (31,714)','Switzerland (25,473)','Ireland (17,766)','Czechia (11,954)','Australia (9,560)','Estonia (1,989)','Slovenia (1,600)'
+		,'-------------',
 		'England','Scotland','Wales',
 		'-------------',
 		'London','Lima',
