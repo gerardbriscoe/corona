@@ -570,7 +570,7 @@ window.app = new Vue({
 		'-------------',
 		'London','Lima',
 		'-------------',
-		'Governance','Full Democracies','Flawed Democracies',
+		'Governance','Full Democracies','Flawed Democracies','Hybrid Regimes','Less Authoritarian','More Authoritarian',
 		'-------------',
 		'Locations'],
 		selectedRegion: 'Cities',
