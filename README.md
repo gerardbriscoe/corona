@@ -15,11 +15,11 @@ There is a lack of graphs focusing on cities, especially in showing their curren
 |South America| North America  | Europe | Asia | Middle East | Africa | Oceania|
 |:--------------|:--------------|:-------|:-----|:------------|:-------|:-------|
 | Sao Paulo | New York | London | Tokyo | Dubai | Johannesburg | Sydney |
-| Buenos Aires | Los Angeles | Paris | Shanghai | Istanbul | Lagos | Auckland |
-| Bogota | Chicago | Berlin | Singapore |Riyadh  | Casablanca | Honolulu |
-| Santiago | Toronto | Milan | Hong Kong |Tel Aviv| Tunis | Melbourne |
-| Caracas | Mexico City | Madrid | Mumbai | Cairo| Kampala | Wellington |
-| Lima | Montreal | Moscow | Seoul | Doha | Luanda | Brisbane |
+| Buenos Aires | Toronto | Paris | Shanghai | Istanbul | Lagos | Auckland |
+| Bogota | Mexico City | Berlin | Singapore |Riyadh  | Casablanca | Honolulu |
+| Santiago | Los Angeles | Milan | Hong Kong |Tel Aviv| Tunis | Melbourne |
+| Caracas | Montreal | Madrid | Mumbai | Cairo| Kampala | Wellington |
+| Lima | Chicago | Moscow | Seoul | Doha | Luanda | Brisbane |
 | Rio de Janeiro | Vancouver | Amsterdam | Jakarta | Abu Dhabi | Dar es Salaam | Christchurch |
 
 Selecting 7 cities per region based upon Loughborough University’s [City Link Classification](https://www.lboro.ac.uk/gawc/world2018link.html) (connectivity), nation diversity, as well as city, national and regional contributions to Global Domestic Product (GDP). 
