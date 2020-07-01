@@ -324,7 +324,7 @@ window.app = new Vue({
 			'Sao Paulo','New York','London','Tokyo','Dubai','Johannesburg','Sydney','Buenos Aires','Los Angeles','Paris','Shanghai','Istanbul','Lagos','Auckland','Bogota','Chicago','Berlin','Singapore','Riyadh','Casablanca','Santiago','Toronto','Milan','Hong Kong','Tel Aviv','Tunis','Melbourne','Caracas','Mexico City','Madrid','Mumbai','Cairo','Kampala','Wellington',
 			'Brazil','USA','United Kingdom','Japan','United Arab Emirates','SouthAfrica','Australia','Argentina','France','China','Turkey','Nigeria','New Zealand','Colombia','Mexico','Germany','Singapore','Saudi Arabia','Morocco','Chile','Canada','Italy','Israel','Tunisia','Taiwan','Venezuela', 'Spain','India','Egypt','Uganda'
 			]
-			const selectAll = ['Europe','Brazil','Lima']
+			const selectAll = ['Europe','Brazil','Lima','Flawed Democracies','Hybrid Regimes','Less Authoritarian']
 			if (this.selectedRegion == 'Locations')
 				{this.selectedCountries = ['Barnet','London','England','United Kingdom','Western Europe','European Union','Europe','World'];}
 			else if (selectAll.indexOf(this.selectedRegion) > -1)
@@ -567,7 +567,7 @@ window.app = new Vue({
 		'-------------',
 		'North America','South America','Latin America','Europe','EU','Middle East','Africa','Asia','Oceania',
 		'-------------',
-		'USA (2,745,716)','Brazil (1,426,913)','Russia (654,405)','India (603,051)','UK (313,483)','Spain (296,351)','Peru (285,213)','Chile (282,043)','Italy (240,760)','Germany (195,998)','Austria (151,209)','South Africa (104,271)','Canada (83,534)','China (68,451)','Sweden (61,509)','Belgium (50,273)','Netherlands (31,851)','Switzerland (25,473)','Ireland (17,873)','Czechia (12,006)','Australia (9,560)','Estonia (1,989)','Slovenia (1,613)' 
+		'USA (2,751,043)','Brazil (1,426,913)','Russia (654,405)','India (604,808)','UK (313,483)','Spain (296,351)','Peru (285,213)','Chile (282,043)','Italy (240,760)','Germany (195,998)','Austria (151,209)','South Africa (104,271)','Canada (83,534)','China (68,451)','Sweden (61,509)','Belgium (50,273)','Netherlands (31,851)','Switzerland (25,473)','Ireland (17,873)','Czechia (12,006)','Australia (9,560)','Estonia (1,989)','Slovenia (1,613)' 
 		,'-------------',
 		'England','Scotland','Wales',
 		'-------------',
