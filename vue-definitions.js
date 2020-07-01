@@ -1,5 +1,8 @@
 "use strict";
 // custom graph component
+
+function camelCase(str){return str.replace(/\s(.)/g,function(a){return a.toUpperCase();}).replace(/\s/g, '').replace(/^(.)/,function(b){return b.toLowerCase();});}
+
 Vue.component('graph', {
 	props: ['graphData', 'day', 'resize'],
 	template: '<div ref="graph" id="graph" style="height: 100%;"></div>',
@@ -228,7 +231,7 @@ window.app = new Vue({
 		},
 
 		pullData(selectedData, selectedRegion, updateSelectedCountries = true) {
-				let url = 'data/' + selectedRegion.toLowerCase().replace(/ \([0-9,]*\)/g,"").replace(" ","").replace("america","America").replace("east","East").replace("southa","southA").replace("southk","southK") + '.csv';
+				let url = 'data/' + camelCase(selectedRegion.toLowerCase().replace(/ \([0-9,]*\)/g,"")) + '.csv';
 			Plotly.d3.csv(url, (data) => this.processData(data, selectedRegion, updateSelectedCountries));
 		},
 
