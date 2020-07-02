@@ -567,11 +567,11 @@ window.app = new Vue({
 		'-------------',
 		'North America','South America','Latin America','Europe','EU','Middle East','Africa','Asia','Oceania',
 		'-------------',
-		'USA (2,799,720)','Brazil (1,456,969)','Russia (661,165)','India (618,394)','UK (313,483)','Spain (296,739)','Peru (288,477)','Chile (284,541)','Italy (240,961)','Germany (196,372)','Austria (159,333)','South Africa (104,271)','Canada (83,537)','China (69,692)','Sweden (61,598)','Belgium (50,335)','Netherlands (31,967)','Switzerland (25,477)','Ireland (17,941)','Czechia (12,116)','Australia (9,643)','Estonia (1,990)','Slovenia (1,634)' 
+		'USA (2,804,733)','Brazil (1,476,884)','Russia (661,165)','India (626,538)','UK (313,483)','Spain (297,183)','Peru (288,477)','Chile (284,541)','Italy (240,961)','Germany (196,372)','Austria (159,333)','South Africa (104,643)','Canada (83,537)','China (69,692)','Sweden (61,598)','Belgium (50,335)','Netherlands (31,967)','Switzerland (25,477)','Ireland (17,941)','Czechia (12,116)','Australia (9,643)','Estonia (1,990)','Slovenia (1,634)' 
 		,'-------------',
 		'England','Scotland','Wales',
 		'-------------',
-		'London','Chicago','Lima',
+		'London','Seoul','Chicago','Lima',
 		'-------------',
 		'Governance','Full Democracies','Flawed Democracies','Hybrid Regimes','Less Authoritarian','More Authoritarian',
 		'-------------',
