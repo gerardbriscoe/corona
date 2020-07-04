@@ -567,7 +567,7 @@ window.app = new Vue({
 		'-------------',
 		'North America','South America','Latin America','Europe','EU','Middle East','Africa','Asia','Oceania',
 		'-------------',
-		'USA (2,910,215)','Brazil (1,550,176)','Russia (674,515)','India (664,488)','UK (297,625)','Spain (295,599)','Peru (288,089)','Chile (284,276)','Italy (241,419)','Germany (197,250)','Austria (177,124)','South Africa (105,211)','Canada (83,545)','China (71,419)','Sweden (61,838)','Belgium (50,335)','Netherlands (32,198)','Switzerland (25,498)','Ireland (18,165)','Czechia (12,372)','Australia (10,004)','Estonia (1,993)','Slovenia (1,679)' 
+		'USA (2,913,664)','Brazil (1,550,176)','Russia (674,515)','India (672,644)','UK (297,625)','Spain (295,599)','Peru (288,089)','Chile (284,900)','Italy (241,419)','Germany (197,250)','Austria (177,124)','South Africa (105,211)','Canada (83,545)','China (71,419)','Sweden (61,838)','Belgium (50,335)','Netherlands (32,198)','Switzerland (25,509)','Ireland (18,165)','Czechia (12,372)','Australia (10,004)','Estonia (1,993)','Slovenia (1,679)' 
 		,'-------------',
 		'England','Scotland','Wales',
 		'-------------',
