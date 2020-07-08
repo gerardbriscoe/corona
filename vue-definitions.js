@@ -567,7 +567,7 @@ window.app = new Vue({
 		'-------------',
 		'North America','South America','Latin America','Europe','EU','Middle East','Africa','Asia','Oceania',
 		'-------------',
-		'USA (3100947)','Brazil (1674655)','India (760761)','Russia (700792)','Peru (309278)','Chile (301019)','Spain (299210)','UK (286979)','Mexico (268008)','Italy (241956)','South Africa (215855)','Germany (198561)','France (168810)','Colombia (124494)','Canada (106167)','China (83572)','Belgium (62123)','Netherlands (50746)','Panama (40291)','Poland (36689)','Switzerland (32498)','Ireland (25538)','Austria (18513)','Czechia (12685)','Australia (10538)','Estonia (2003)','Slovenia (1763)',1537 Zealand",TotalCases "New,
+		'USA (3117559)','Brazil (1674655)','India (763782)','Russia (700792)','Peru (309278)','Chile (303083)','Spain (299593)','UK (286979)','Mexico (268008)','Italy (242149)','South Africa (215855)','Germany (198561)','France (168810)','Colombia (124494)','Canada (106167)','China (83572)','Belgium (62123)','Netherlands (50746)','Panama (40291)','Poland (36689)','Switzerland (32498)','Ireland (25538)','Austria (18513)','Czechia (12775)','Australia (10538)','Estonia (2003)','Slovenia (1763)',1537 1537,TotalCases TotalCases,
 		'-------------',
 		'England','Scotland','Wales',
 		'-------------',
