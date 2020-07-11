@@ -2,8 +2,8 @@
 // custom graph component
 
 var point = {
-"Countries":1000,"Cities":1000,
-"default":1000
+'Germany':169,'Japan':168,'Mexico':164,'Panama':88,'Spain':120,
+'default':171
 };
 
 function camelCase(str){return str.replace(/\s(.)/g,function(a){return a.toUpperCase();}).replace(/\s/g, '').replace(/^(.)/,function(b){return b.toLowerCase();});}
@@ -361,7 +361,7 @@ window.app = new Vue({
 				if (this.day == this.dates.length)
 					{this.day = this.minDay;}
 				this.paused = false;
-				setTimeout(this.increment, 200);
+				setTimeout(this.increment, 100);
 			} else {this.paused = true;}
 		},
 
@@ -371,15 +371,21 @@ window.app = new Vue({
 		},
 
 		increment() {
-			if (this.day == pausePoint(this.selectedRegion)) {
+			if (this.day <= pausePoint(this.selectedRegion))
+				{this.selectedTitle = "Confirmed Cases";}
+				else{this.selectedTitle = "Projected Cases";}
+			if (this.day == pausePoint(this.selectedRegion) && this.futurePause == true) {
 				this.paused = true;
+				this.futurePause = false;
 			}else if (this.day == this.dates.length || this.minDay < 0) {
 				this.day = this.dates.length;
 				this.paused = true;
+				this.futurePause = true;
 			} else if (this.day < this.dates.length) {
+				this.futurePause = true;
 				if (!this.paused) {
 					this.day++;
-					setTimeout(this.increment, 200);
+					setTimeout(this.increment, 50);
 				}
 			}
 		},
@@ -426,7 +432,7 @@ window.app = new Vue({
 				showlegend: false,
 				autorange: false,
 				xaxis: {
-					title: 'Total ' + this.selectedData,
+					title: 'Total ' + this.selectedTitle,
 					type: this.selectedScale == 'Logarithmic Scale' ? 'log' : 'linear',
 					range: this.selectedScale == 'Logarithmic Scale' ? this.logxrange : this.linearxrange,
 					titlefont: {size: 24,color: 'rgba(67, 171, 201,1)'},
@@ -570,12 +576,13 @@ window.app = new Vue({
 		paused: true,
 		dataTypes: ['Confirmed Cases','Reported Deaths'],
 		selectedData: 'Confirmed Cases',
+		selectedTitle: 'Confirmed Cases',
 		regions: [
 		'Cities','Countries','Regions',
 		'-------------',
 		'North America','South America','Latin America','Europe','EU','Middle East','Africa','Asia','Oceania',
 		'-------------',
-		'USA (3294539)','Brazil (1807496)','India (830763)','Russia (720547)','Peru (319646)','Chile (309274)','Spain (300988)','Mexico (289174)','UK (288133)','South Africa (250687)','Italy (242639)','Germany (199652)','France (170752)','Colombia (140776)','Canada (107126)','Argentina (94060)','China (83587)','Belgium (62469)','Netherlands (50921)','Panama (43257)','Poland (37521)','Switzerland (32798)','Ireland (25589)','Austria (18783)','Czechia (13062)','Australia (11216)','Estonia (2014)','Slovenia (1827)','New Zealand (1543)',
+		'USA (3352558)','Brazil (1839850)','India (850358)','Russia (720547)','Peru (322710)','Chile (312029)','Spain (300988)','Mexico (289174)','UK (288953)','South Africa (264184)','Italy (242827)','Germany (199812)','France (170752)','Colombia (145362)','Canada (107346)','Argentina (94060)','China (83587)','Belgium (62469)','Netherlands (50921)','Panama (43257)','Poland (37521)','Switzerland (32817)','Ireland (25611)','Austria (18783)','Czechia (13089)','Australia (11216)','Estonia (2014)','Slovenia (1827)','New Zealand (1543)',
 		'-------------',
 		'England','Scotland','Wales',
 		'-------------',
@@ -604,6 +611,7 @@ window.app = new Vue({
 		mySelect: '',
 		searchField: '',
 		autoplay: true,
+		futurePause: true,
 		firstLoad: true,
 		graphAttributes: {
 			mounted: false,
