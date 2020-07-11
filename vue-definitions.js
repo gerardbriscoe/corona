@@ -365,7 +365,9 @@ window.app = new Vue({
 		},
 
 		increment() {
-			if (this.day == this.dates.length || this.minDay < 0) {
+			if (this.selectedRegion == 'Countries' && this.day == 100 ) {
+				this.paused = true;
+			} else if (this.day == this.dates.length || this.minDay < 0) {
 				this.day = this.dates.length;
 				this.paused = true;
 			} else if (this.day < this.dates.length) {
