@@ -575,7 +575,7 @@ window.app = new Vue({
 		'-------------',
 		'North America','South America','Latin America','Europe','EU','Middle East','Africa','Asia','Oceania',
 		'-------------',
-		'USA (3292257)','Brazil (1804338)','India (823927)','Russia (720547)','Peru (319646)','Chile (309274)','Spain (300988)','Mexico (289174)','UK (288133)','South Africa (250687)','Italy (242639)','Germany (199588)','France (170752)','Colombia (140776)','Canada (107126)','Argentina (94060)','China (83587)','Belgium (62469)','Netherlands (50840)','Panama (43257)','Poland (37521)','Switzerland (32798)','Ireland (25589)','Austria (18783)','Czechia (13062)','Australia (11212)','Estonia (2014)','Slovenia (1827)','New Zealand (1543)',
+		'USA (3292681)','Brazil (1807496)','India (825736)','Russia (720547)','Peru (319646)','Chile (309274)','Spain (300988)','Mexico (289174)','UK (288133)','South Africa (250687)','Italy (242639)','Germany (199588)','France (170752)','Colombia (140776)','Canada (107126)','Argentina (94060)','China (83587)','Belgium (62469)','Netherlands (50921)','Panama (43257)','Poland (37521)','Switzerland (32798)','Ireland (25589)','Austria (18783)','Czechia (13062)','Australia (11212)','Estonia (2014)','Slovenia (1827)','New Zealand (1543)',
 		'-------------',
 		'England','Scotland','Wales',
 		'-------------',
