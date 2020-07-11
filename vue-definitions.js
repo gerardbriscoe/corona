@@ -1,7 +1,14 @@
 "use strict";
 // custom graph component
 
+var point = { 
+Countries:3,
+Cities:2
+};
+
 function camelCase(str){return str.replace(/\s(.)/g,function(a){return a.toUpperCase();}).replace(/\s/g, '').replace(/^(.)/,function(b){return b.toLowerCase();});}
+
+function pausePoint(view){return point[view]}
 
 Vue.component('graph', {
 	props: ['graphData', 'day', 'resize'],
@@ -365,9 +372,7 @@ window.app = new Vue({
 		},
 
 		increment() {
-			if (this.selectedRegion == 'Countries' && this.day == 100 ) {
-				this.paused = true;
-			} else if (this.day == this.dates.length || this.minDay < 0) {
+			if (this.day == this.dates.length || this.minDay < 0) {
 				this.day = this.dates.length;
 				this.paused = true;
 			} else if (this.day < this.dates.length) {
